@@ -26,6 +26,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ path('custom', {name:'custom-page-1'}) }}">Custom Page 1</a>
                     </li>
+                    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                        <li class="nav-item float-right">
+                            <a class="nav-link" href="{{ path('app_logout') }}">Log Out</a>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
             </nav>
